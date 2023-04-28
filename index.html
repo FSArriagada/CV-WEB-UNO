@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Curriculum Vitae" />
+    <meta name="keywords" content="HTML5, CSS3, CV, Curriculum vitae, programacion, UNO" />
+    <meta name="author" content ="Facundo Arriagada">
+    <title>CV Facundo Arriagada</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>FACUNDO ARRIAGADA</h1>
+        <h2>Estudiante de Tecnicatura en Tecnologias Web</h2>
+      </div>
+      <figure>
+        <img src="profile-pic.jpg" alt="Foto-de-CV" class="profile-picture" />
+      </figure>
+    </header>
+    <section>
+      <div class="info">
+        <div>
+          <h2>Sobre mi</h2>
+          <p>
+            Estudiante de la Tecnicatura en Tecnologias Web en la Universidad
+            Nacional del Oeste y soy Desarrollador Front-End
+          </p>
+        </div>
+      </div>
+      <div class="info">
+        <h2>Formación Académica</h2>
+        <div class="espaciado">
+          <h3>Instituto Modelo Almafuerte</h3>
+          <p>(2012-2017)</p>
+          <p>Bachiller en Economía y Administración.</p>
+        </div>
+        <div class="espaciado">
+          <h3>Universidad Nacional de Lujan</h3>
+          <p>(2019-2022)</p>
+          <p>Licenciatura en Sistemas de Informacion (Incompleto)</p>
+        </div>
+        <div class="espaciado">
+          <h3>Universidad Nacional del Oeste</h3>
+          <p>(2023- En curso)</p>
+          <p>Tecnicatura en Tecnologias Web</p>
+        </div>
+        <div class="espaciado">
+          <h3>Idiomas</h3>
+          <p>Ingles Avanzado</p>
+          <p>Portugués Basico</p>
+        </div>
+      </div>
+      <div class="info">
+        <h2>Experiencia Laboral</h2>
+        <h3>Empleado</h3>
+        <p>Taxi Laser LLC | (Agosto 2022 - Diciembre 2022)</p>
+        <p>Atencion al cliente.</p>
+      </div>
+    </section>
+    <section>
+      <form id="orderForm" action="" method="get">
+        <fieldset>
+          <legend>Datos de Contacto</legend>
+          <ul>
+            <li>
+              <label for="correo">Correo</label>
+              <input
+                type="email"
+                name="correo"
+                id="correo"
+                placeholder="nombre@ejemplo.com"
+                required="required"
+                maxlength="50"
+              />
+            </li>
+            <li>
+              <label for="nombre">Nombre y Apellido</label>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                placeholder="Nombre y Apellido"
+                required="required"
+                maxlength="50"
+              />
+            </li>
+            <li>
+              <label for="telefono">Tel&eacute;fono <em>(opcional)</em></label>
+              <input
+                type="tel"
+                name="telefono"
+                id="telefono"
+                placeholder="(999) 9999-9999"
+                maxlength="20"
+              />
+            </li>
+            <li>
+              <label for="pais">Pa&iacute;s</label>
+              <select name="pais" id="pais">
+                <option>Argentina</option>
+                <option>Brasil</option>
+                <option>Chile</option>
+                <option>Espa&ntilde;a</option>
+                <option>Estados Unidos</option>
+                <option>M&eacute;xico</option>
+                <option>Uruguay</option>
+              </select>
+            </li>
+            <li>
+              <label for="Tipo de trabajo">Tipo de Trabajo</label>
+              <select name="Tipo de trabajo" id="Tipo-de-trabajo">
+                <option>Presencial</option>
+                <option>Remoto</option>
+                <option>Híbrido</option>
+              </select>
+            </li>
+            <li>
+              <label for="message">Mensaje:</label>
+              <textarea
+                id="message"
+                name="message"
+                required="required"
+              ></textarea>
+            </li>
+          </ul>
+          <input type="submit" name="ordenar" value="Enviar" />
+        </fieldset>
+      </form>
+    </section>
+    <footer id="pie">Derechos Reservados &copy; 2023</footer>
+  </body>
+</html>
