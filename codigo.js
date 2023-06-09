@@ -5,6 +5,7 @@ function main() {
     const nombre = document.getElementById("nombre");
     const correo = document.getElementById("correo");
     const salario = document.getElementById("salario");
+    const pais = document.getElementById("pais")
     const mensaje = document.getElementById("mensaje");
     const tbody = document.getElementById("tbody");
 
@@ -23,6 +24,8 @@ function main() {
 
         const salarioValue = salario.value;
         const salarioError = salario.nextElementSibling;
+        
+        const paisValue = pais.value;
 
         const mensajeValue = mensaje.value;
         const mensajeError = mensaje.nextElementSibling;
@@ -64,30 +67,35 @@ function main() {
                 nombre: nameValue,
                 correo: correoValue,
                 salario: salarioValue,
+                pais: paisValue,
                 mensaje: mensajeValue
             });
 
             let th = document.createElement('th');
             th.setAttribute('scope', 'row');
-            th.innerText = datosForm.length;
             let td1 = document.createElement('td');
             td1.innerText = nameValue;
             let td2 = document.createElement('td');
-            td2.innerText = salarioValue;
+            td2.innerText = correoValue;
             let td3 = document.createElement('td');
-            td3.innerText = Math.round(salarioValue / 486);
+            td3.innerText = paisValue;
             let td4 = document.createElement('td');
-            td4.innerText = Math.round(salarioValue / 528);
+            td4.innerText = salarioValue;
+            let td5 = document.createElement('td');
+            td5.innerText = Math.round(salarioValue / 486);
+            let td6 = document.createElement('td');
+            td6.innerText = Math.round(salarioValue / 528);
 
             let tr = document.createElement('tr');
 
             let appendedTr = tbody.appendChild(tr);
 
-            appendedTr.appendChild(th);
             appendedTr.appendChild(td1);
             appendedTr.appendChild(td2);
             appendedTr.appendChild(td3);
             appendedTr.appendChild(td4);
+            appendedTr.appendChild(td5);
+            appendedTr.appendChild(td6);
             alert('Formulario enviado correctamente');
         } else {
             alert('Corrige los campos para enviar el formulario.');
@@ -172,5 +180,43 @@ function main() {
         };
         esValido = true;
     }
-}
 
+    function ordenarTabla(e) {
+        
+        const indiceColumna = Array.from(e.target.parentNode.children).indexOf(e.target);
+        const filas = tbody.getElementsByTagName('tr');
+        const filasArray = Array.from(filas);
+
+        filasArray.sort((a, b) => {
+            const valorA = a.getElementsByTagName('td')[indiceColumna].innerText.toLowerCase();
+            const valorB = b.getElementsByTagName('td')[indiceColumna].innerText.toLowerCase();
+            return valorA.localeCompare(valorB);
+        });
+
+        // Si el th clickeado tiene la clase "ascendente", invertir el orden del array de filas para ordenar de forma descendente
+        if (e.target.classList.contains('ascendente')) {
+            filasArray.reverse();
+            e.target.classList.remove('ascendente');
+            e.target.classList.add('descendente');
+        } else {
+            e.target.classList.remove('descendente');
+            e.target.classList.add('ascendente');
+        }
+
+        // Eliminar las filas existentes en la tabla
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+
+        // Agregar las filas ordenadas a la tabla
+        filasArray.forEach((fila) => {
+            tbody.appendChild(fila);
+        });
+    }
+
+    const ths = tbody.getElementsByTagName('th');
+    Array.from(ths).forEach((th) => {
+        th.addEventListener('click', ordenarTabla);
+    });
+
+}

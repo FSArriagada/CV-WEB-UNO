@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Curriculum Vitae" />
-    <meta name="keywords" content="HTML5, CSS3, CV, Curriculum vitae, programacion, UNO" />
-    <meta name="author" content ="Facundo Arriagada">
-    <title>CV Facundo Arriagada</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="codigo.js"></script>
-  </head>
-  <body>
-    <div class="hoja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Curriculum Vitae" />
+  <meta name="keywords" content="HTML5, CSS3, CV, Curriculum vitae, programacion, UNO" />
+  <meta name="author" content="Facundo Arriagada">
+  <title>CV Facundo Arriagada</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="codigo.js"></script>
+</head>
+
+<body>
+  <div class="hoja">
     <header class="d-flex p-4 text-center flex-row-reverse justify-content-around align-items-center">
       <div>
         <h1>FACUNDO ARRIAGADA</h1>
@@ -42,7 +47,8 @@
         <div class="espaciado">
           <h3 class="fs-5 pb-2" class="fs-5 pb-2">Universidad Nacional de Lujan</h3>
           <p class="fs-5 lh-1_5 mb-1">(2019-2022)</p>
-          <p class="fs-5 lh-1_5 mb-1">Licenciatura en Sistemas de border-bottom border-secondary pb-4 mb-4rmacion (Incompleto)</p>
+          <p class="fs-5 lh-1_5 mb-1">Licenciatura en Sistemas de border-bottom border-secondary pb-4 mb-4rmacion
+            (Incompleto)</p>
         </div>
         <div class="espaciado">
           <h3 class="fs-5 pb-2">Universidad Nacional del Oeste</h3>
@@ -69,35 +75,17 @@
           <ul>
             <li>
               <label for="correo">Correo</label>
-              <input
-                type="email"
-                name="correo"
-                id="correo"
-                placeholder="nombre@ejemplo.com"
-                required="required"
-                maxlength="50"
-              />
+              <input type="email" name="correo" id="correo" placeholder="nombre@ejemplo.com" required="required"
+                maxlength="50" />
             </li>
             <li>
               <label for="nombre">Nombre y Apellido</label>
-              <input
-                type="text"
-                name="nombre"
-                id="nombre"
-                placeholder="Nombre y Apellido"
-                required="required"
-                maxlength="50"
-              />
+              <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" required="required"
+                maxlength="50" />
             </li>
             <li>
               <label for="telefono">Teléfono <em>(opcional)</em></label>
-              <input
-                type="tel"
-                name="telefono"
-                id="telefono"
-                placeholder="(999) 9999-9999"
-                maxlength="20"
-              />
+              <input type="tel" name="telefono" id="telefono" placeholder="(999) 9999-9999" maxlength="20" />
             </li>
             <li>
               <label for="pais">País</label>
@@ -120,47 +108,47 @@
               </select>
             </li>
             <label for="salario">Sueldo mínimo</label>
-            <input
-                type="text"
-                name="salario"
-                id="salario"
-                placeholder="Ejemplo: (150000)"
-                required="required"
-                maxlength="12"
-              />
+            <input type="text" name="salario" id="salario" placeholder="Ejemplo: (150000)" required="required"
+              maxlength="12" />
             </li>
             <li>
               <label for="mensaje">Mensaje:</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                required="required"
-              ></textarea>
+              <textarea id="mensaje" name="mensaje" required="required"></textarea>
             </li>
           </ul>
-          
+
           <input type="submit" name="submit" value="Enviar" />
         </fieldset>
       </form>
+      <section class="container">
+        <h2 class="text-center">Propuestas</h2>
+        <select name="ordenar" id="ordenar" class="form-select w-25 mb-3" onchange="ordenarTabla()">
+             <option value="default">Default</option>
+             <option value="nombre">Ordenar por nombre A-Z</option>
+             <option value="sueldoasc">Sueldo Ascendente</option>
+             <option value="sueldodesc">Sueldo Descendente</option>
+        </select>
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Pais</th>
-            <th scope="col">ARS$</th>
+            <th scope="col" onclick="ordenarTabla()">Nombre</th>
+            <th scope="col" onclick="ordenarTabla()">Correo</th>
+            <th scope="col" onclick="ordenarTabla()">Pais</th>
+            <th scope="col" onclick="ordenarTabla()">ARS$</th>
             <th scope="col">USD$</th>
             <th scope="col">EUR€</th>
           </tr>
         </thead>
-      <tbody id="tbody">
-              
-      </tbody>
-      <picture>
-        <a href="https://www.linkedin.com/in/facundo-arriagada/" target="_blank"><img src="linkedin.png" alt="linkedin-icon"></a>
-      </picture>
+        <tbody id="tbody">
+
+        </tbody>
+        <picture>
+          <a href="https://www.linkedin.com/in/facundo-arriagada/" target="_blank"><img src="linkedin.png"
+              alt="linkedin-icon"></a>
+        </picture>
     </section>
     <footer id="pie">Derechos Reservados &copy; 2023</footer>
   </div>
-  </body>
+</body>
+
 </html>
